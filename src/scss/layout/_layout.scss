@@ -1,0 +1,12 @@
+section{ 
+    position:relative; 
+}
+
+.container{ 
+    display:grid; 
+    grid-template-columns: 21% 79%;
+     
+    height:86.5rem;
+    width:100%; 
+    max-width:1440px;
+}

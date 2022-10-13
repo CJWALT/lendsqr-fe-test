@@ -1,0 +1,88 @@
+aside{ 
+    height: 98.37rem; 
+
+    padding-top:8.69rem;
+    padding-left:1.88rem;
+    display:flex; 
+    flex-direction:column; 
+    gap:2rem;
+    background-color:#fff; 
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+
+    .aside-links{ 
+        display:flex; 
+        gap:.8rem;
+        font-family: 'Work Sans', sans-serif;
+        text-decoration:none;
+        font-weight: 400;
+        font-size: $small-font;
+        color:$font-color;
+        padding:1.94rem 0 0 0;
+        position:relative;
+        transition:all .5s ease-in;
+        &:hover{ 
+            margin-left:.9rem;
+        }   
+    }
+    .active{ 
+        background-color: lighten($primary-color, 40%);
+        position:absolute;
+        left:0;
+        width:21%;
+        padding-left:31px;
+        padding-top:.63rem; 
+        padding-bottom:.63rem;
+
+        &:before{ 
+            content:""; 
+            width:5px; 
+            left:0;
+            height:100%;
+            background:$primary-color;
+            position:absolute;
+            top:0;
+        }
+    }
+    
+    .no-padding{ 
+        padding-top:0;
+    }
+
+    .space-top{ 
+        margin-top:3rem;
+    }
+    .aside--heading{ 
+        color:$place-holder-color;
+        font-weight:500;
+        font-size:.75rem; 
+        font-family:'Work Sans', sans-serif; 
+        text-transform: uppercase;
+        margin-bottom:1.25rem;
+    }
+    .bar{ 
+        margin:-4rem 0;
+        position:absolute;
+        bottom:0;
+        left:0; 
+        color:$font-color;
+        width:17.69rem;
+    }
+    .settings-links{ 
+        margin-bottom:4.44rem;
+    }
+    .aside--logout__version{ 
+        &--number{ 
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 400;
+            font-size: .75rem;
+            color:$font-color;
+            bottom:-10.31rem;
+            position:absolute; 
+        }
+    }
+}
+
+.sidebar-icon{ 
+    font-size:1rem;
+    color:$font-color;
+}

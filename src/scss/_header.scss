@@ -1,0 +1,94 @@
+header{ 
+    position:fixed;
+    width:100%;
+    display:grid;
+    grid-template-columns: 17.69rem auto;
+    height:6.25rem;
+    box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+    z-index:20;
+    background-color:#fff;
+    .header-logo{ 
+        height:1.88rem;
+        width:9.1rem;
+        margin-top:2.19rem;
+        margin-left:1.88rem;
+    }
+
+    .search-info{ 
+        display:flex;
+        justify-content: space-between;
+        padding:0 3.75rem;
+        .search-input{ 
+            padding:1.7rem 0;
+            width:25rem;
+            .form-wrap{ 
+                width:100%;
+                position:relative;
+                .text-input{ 
+                    border:1px solid #213F7D;
+                    height:2.5rem;
+                    width:100%;
+                    border-radius: .5rem;
+                    opacity:.2; 
+                    padding:  0 .75rem;
+
+                    &::placeholder{ 
+                        font-size:.87rem;
+                        font-family:'Work Sans', sans-serif;
+                        color:$place-holder-color;
+                        opacity:.7;
+                    }
+                }
+                .search-btn{ 
+                    font-size:$small-font;
+                    
+                }
+            }
+        }
+        .header-info{ 
+            display:flex;
+            justify-content: space-between;
+            gap:2.94rem;
+           
+            .header-link{ 
+                padding: 2.75rem 0 2.31rem 0;
+                font-size:$small-font; 
+                font-weight:400;
+                font-family:'Roboto', sans-serif; 
+                text-decoration: underline;
+                color:$font-color;
+            }
+            &__details{  
+               display:inherit;
+               align-items: center;
+               
+               .not-icon{ 
+                    padding:2px;
+                    font-size:1.63rem;
+                    margin-right:1.87rem;
+                    color:$font-color; 
+                }
+            }
+            &__img{ 
+                width:3rem; 
+                height:3rem;
+                margin-right:.63rem;
+            }
+            &__name{ 
+                font-size:$small-font; 
+                font-weight:500; 
+                font-family: 'Work Sans', sans-serif;
+                color:$font-color; 
+                margin-right:.25rem;
+                cursor:pointer;
+                
+            }
+            .arrowdown-icon{ 
+                color:$font-color; 
+                font-size:1rem; 
+                cursor:pointer;
+            }
+        }
+
+    }
+}

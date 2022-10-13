@@ -1,0 +1,41 @@
+.card{ 
+    display:flex; 
+    flex-direction: column;
+    padding:1.25rem 1.88rem;
+    background: #fff;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    width:13.5rem; 
+    transition: all .5s ease;
+
+    &-icon{ 
+        border-radius:50%; 
+        width:2.5rem; 
+        height:2.5rem;
+        background: lighten(#DF18FF, 30%);
+        padding:.75rem .75rem;
+        margin-bottom:.87rem;
+    }
+
+    &-text{ 
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 500;
+        font-size: .88rem;
+        text-transform: uppercase;
+        color: $place-holder-color;
+    }
+    &-number{ 
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 600;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        color: $font-color;
+        margin-top:.75rem;
+
+    }
+    &:hover{ 
+        box-shadow:none;
+        cursor:pointer;
+    }
+}

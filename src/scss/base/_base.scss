@@ -1,0 +1,20 @@
+*,::before, ::after{
+    font-family: 'AvenirNextLTPro-Regular';
+    margin:0; 
+    padding:0; 
+    box-sizing:border-box;
+}
+body{ 
+    font-size:16px;
+    max-width:90rem;
+}
+
+img{ 
+    width:100%; 
+    height:auto;
+}
+h1{ 
+    font-size:1.31rem; 
+    color:$font-color;
+    font-family:'Work Sans', sans-serif;
+}
