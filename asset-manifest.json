@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/lendsqr-fe-test/static/css/main.ab0a8dcc.css",
+    "main.js": "/lendsqr-fe-test/static/js/main.8eeb4d5e.js",
+    "index.html": "/lendsqr-fe-test/index.html",
+    "main.ab0a8dcc.css.map": "/lendsqr-fe-test/static/css/main.ab0a8dcc.css.map",
+    "main.8eeb4d5e.js.map": "/lendsqr-fe-test/static/js/main.8eeb4d5e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ab0a8dcc.css",
+    "static/js/main.8eeb4d5e.js"
+  ]
+}
