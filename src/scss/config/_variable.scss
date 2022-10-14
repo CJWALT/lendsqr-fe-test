@@ -1,9 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap');
 
-//scss variables
-// $colors:(
-//     "secondary-color": #213F7D,
-//     "btn-color": #39CDCC,
-// )
 
 
 $primary-color: #39CDCC;
@@ -32,3 +28,13 @@ $grid-cols:132px 110px 183px 131px 140px 110px 14px;
     height:2.5rem;
     padding:.75rem 1.25rem;
 }
+
+@mixin cardIcon { 
+     
+        border-radius:50%; 
+        width:2.5rem; 
+        height:2.5rem;
+        background: lighten(#DF18FF, 30%);
+        padding:.75rem .75rem;
+        margin-bottom:.87rem;
+     }

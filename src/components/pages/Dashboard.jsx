@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
-// import {getData} from '../list'
 import Header from '../Header'
 import SideBar from '../SideBar'
 import Card from '../Card'
 import Button from '../Button'
-import {FaBeer} from 'react-icons/fa'
-import {IoFilterSharp} from 'react-icons/io5'
-import {HiOutlineDotsVertical} from 'react-icons/hi'
-import {IoEyeOutline} from 'react-icons/io5'
+
+import {IoFilterSharp, IoEyeOutline} from 'react-icons/io5'
+import {HiOutlineDotsVertical, HiOutlineUser, HiOutlineUserGroup } from 'react-icons/hi'
+import {FaFileInvoiceDollar, FaCoins} from 'react-icons/fa'
 import {FiUserX, FiUserCheck} from 'react-icons/fi'
 import { IconContext } from 'react-icons';
 
@@ -49,43 +48,9 @@ const Dashboard = ()=>{
     //handle page click 
     const handlePageClick =async (data)=>{ 
         let currentPage = data.selected + 1
-        console.log(currentPage)
         const dataFromServer = await fetchData(currentPage)
-        console.log(dataFromServer)
         setItems(dataFromServer);
     };
-    // const [list, setList] = useState([{
-    //     name: "lendsqr",
-    // }])
-
-    // useEffect( ()=> { 
-    //     let mounted = true;
-    //     getData()
-        
-    //         .then(items => { 
-    //             if (mounted){ 
-    //                 setList(items)
-    //             }
-    //               console.log(items)
-    //         })
-          
-    //     return() => mounted = false; 
-        
-    //     }, []);
-
-    //     const dataItem = list.map(item => { 
-    //         return <div>{item.orgName}</div> 
-    //     })
-
-       
-
-        
-
-//    const dataItem = list.map(item =>{
-//         return <div> {item.orgName}</div>
-       
-        
-//    });
    
     return(
         <>
@@ -95,122 +60,117 @@ const Dashboard = ()=>{
             <main>
                 <h1 className="user-heading"> User </h1>
                 <div className = "card-wrap">
-                    <Card cardIcon={<FaBeer/>}
+                    <IconContext.Provider value={{className:'users-icon'}}>
+                    <Card cardIcon={<HiOutlineUser/>}
                         cardText="Users"
                         cardNo="2,453"/> 
-                        
-                    <Card cardIcon={<FaBeer/>}
+                        </IconContext.Provider>
+                    <IconContext.Provider value={{className:'user-active-icon'}}>
+                    <Card cardIcon={<HiOutlineUserGroup/>}
                         cardText="Active users"
                         cardNo="2,453"/> 
-                    <Card cardIcon={<FaBeer/>}
+                    </IconContext.Provider>
+                    <IconContext.Provider value={{className:'user-loans'}}>
+                    <Card cardIcon={<FaFileInvoiceDollar/>}
                         cardText="Users with loans"
                         cardNo="12,453"/> 
-                    <Card cardIcon={<FaBeer/>}
+                    </IconContext.Provider>
+                    <IconContext.Provider value={{className:'user-saving'}}>
+                    <Card cardIcon={<FaCoins/>}
                         cardText="Users with savings"
                         cardNo="102,453"/> 
+                        </IconContext.Provider> 
                 </div>
-                {/* <div className="wrap">  */}
-                    {/* {items.map((item)=>{
-                       return  <div className="body-wrap">
-                            <div className="body"> 
-                                <div className="org-name"> 
-                                    {item.orgName}
-                                </div>
-                                <div className="user-name"> 
-                                    {item.userName}
-                                </div>
-                                <div className="user-name"> 
-                                    {item.email}
-                                </div>
-                            </div>
-                        
-                        </div> 
-                    })}
-                </div>
-             */}
-                <div className="table-body">
-                    <div className="t-head">
-                    <IconContext.Provider value={{className:"heading-icon"}}>
-                        <h5> Organization <IoFilterSharp/></h5>
-                        <h5> Username <IoFilterSharp/></h5>
-                        <h5> Email <IoFilterSharp/></h5>
-                        <h5> Phone Number <IoFilterSharp/></h5>
-                        <h5> Date Joined <IoFilterSharp 
-                                        onClick={handleFilterClick}/></h5>
-                        <h5> status <IoFilterSharp/></h5>
-                        <h5></h5>
+                    <div className="table-body">
+                        <IconContext.Provider value={{className:"heading-icon"}}>
+                        <div className="t-head">
+                            <h5> Organization <IoFilterSharp
+                                                onClick={handleFilterClick}/></h5>
+                            <h5> Username <IoFilterSharp 
+                                            onClick={handleFilterClick}/></h5>
+                            <h5> Email <IoFilterSharp
+                                            onClick={handleFilterClick}/></h5>
+                            <h5> Phone Number <IoFilterSharp
+                                            onClick={handleFilterClick}/></h5>
+                            <h5> Date Joined <IoFilterSharp 
+                                            onClick={handleFilterClick}/></h5>
+                            <h5> status <IoFilterSharp 
+                                            onClick={handleFilterClick}/></h5>
+                            <h5></h5>
+                           
+                        </div>
                         </IconContext.Provider>
-                    </div>
-                    <IconContext.Provider value={ {className:"tbody-icon"}}>
-                      {items.slice(0, 9).map((item) =>{
-                        return(
-                            
-                                <div className="tbody-data">
-                                    <p>{item.orgName}</p>
-                                    <p>{item.userName}</p>
-                                    <p className="para-email">{item.email}</p>
-                                    <p>{item.phoneNumber}</p>
-                                    <p>May 15, 2020 10:00 AM</p>
-                                    <p className="inactive">Inactive</p>
-                                    <p><HiOutlineDotsVertical
-                                            onClick={handleOptionClick}/></p>
-                                </div>
-                            
-                        )
-                    
-                      })}
-                    </IconContext.Provider>
                         
-                {filterClick ? ( <div className="filter-wrap">
-                    <form className="filter-form"> 
-                        <div className="filter-label">
-                        <label>Organization</label>
-                        <select defaultValue={'select'}>
-                            <option>Eclipse </option>
-                            <option>Eclipse </option>
-                            </select>
-                        </div>
-                        <div className="filter-label">
-                        <label>Username</label>
-                        <input type='text' placeholder='User'/>
-                        </div>
-                        <div className="filter-label">
-                        <label>Email</label>
-                        <input type='text' placeholder='Email'/>
-                        </div>
-                        <div className="filter-label">
-                        <label>Date</label>
-                        <input type='date' placeholder='Date'  />
+                        <IconContext.Provider value={ {className:"tbody-icon"}}>
+                        {items.slice(0, 9).map((item) =>{
+                            return(
+                                
+                                    <div className="tbody-data" key={item.id} >
+                                        <p>{item.orgName}</p>
+                                        <p>{item.userName}</p>
+                                        <p className="para-email">{item.email}</p>
+                                        <p>{item.phoneNumber}</p>
+                                        <p>{item.createdAt}</p>
+                                        <p className="inactive">Inactive</p>
+                                        <p><HiOutlineDotsVertical
+                                                onClick={handleOptionClick}/></p>
+                                    </div>
+                                
+                            )
                         
-                        </div>
+                        })}
+                        </IconContext.Provider>
+                            
+                    {filterClick ? ( <div className="filter-wrap">
+                        <form className="filter-form"> 
+                            <div className="filter-label">
+                            <label>Organization</label>
+                            <select defaultValue={'select'}>
+                                <option>Eclipse </option>
+                                <option>Eclipse </option>
+                                </select>
+                            </div>
+                            <div className="filter-label">
+                            <label>Username</label>
+                            <input type='text' placeholder='User'/>
+                            </div>
+                            <div className="filter-label">
+                            <label>Email</label>
+                            <input type='text' placeholder='Email'/>
+                            </div>
+                            <div className="filter-label">
+                            <label>Date</label>
+                            <input type='date' placeholder='Date'  />
+                            
+                            </div>
 
-                        <div className="filter-label">
-                            <label>Phone Number</label>
-                            <input type='number' placeholder='Phone Number'/>
-                        </div>
-                        <div className="filter-label">
-                         <label>Status</label>
-                            <select defaultValue={'select'} >
-                                <option>Active</option>
-                                <option>Blacklisted</option>
-                            </select>
-                        </div>
-                        <div className="filter-label__btn"> 
-                            <Button buttonStyle="btn--outline" buttonSize="small-btn">Reset</Button> 
-                            <Button buttonColor="primary" buttonSize="small-btn"> Filter </Button>
-                        </div>
-                    </form>
-                </div>) : null } 
-                
-                {optClick ? (
-                        <div className= 'opt-wrap'>
-                    <IconContext.Provider value={{className:"opt-icon"}}>
-                                <Link to='/'className='options-link'><IoEyeOutline/>View Details</Link>
-                                <Link to='/'className='options-link'><FiUserX/>Blacklist User</Link>
-                                <Link to='/' className='options-link'>< FiUserCheck/>Activate User</Link>
-                            
-                    </IconContext.Provider>
-                    </div>): null}
+                            <div className="filter-label">
+                                <label>Phone Number</label>
+                                <input type='number' placeholder='Phone Number'/>
+                            </div>
+                            <div className="filter-label">
+                            <label>Status</label>
+                                <select defaultValue={'select'} >
+                                    <option>Active</option>
+                                    <option>Blacklisted</option>
+                                </select>
+                            </div>
+                            <div className="filter-label__btn"> 
+                                <Button buttonStyle="btn--outline" buttonSize="small-btn">Reset</Button> 
+                                <Button buttonColor="primary" buttonSize="small-btn"> Filter </Button>
+                            </div>
+                        </form>
+                    </div>) : null } 
+                    
+                    {optClick ? (
+                            <div className= 'opt-wrap'>
+                        <IconContext.Provider value={{className:"opt-icon"}}>
+                                    <Link to='/'className='options-link'><IoEyeOutline/>View Details</Link>
+                                    <Link to='/'className='options-link'><FiUserX/>Blacklist User</Link>
+                                    <Link to='/' className='options-link'>< FiUserCheck/>Activate User</Link>
+                                
+                        </IconContext.Provider>
+                        </div>): null}
             </div>
 
                 <div className="num-pagination"> 

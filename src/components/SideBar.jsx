@@ -1,12 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import {FaBriefcase, FaRegHandshake, FaUserCheck, FaUserTimes,FaRegChartBar} from 'react-icons/fa'
+import {FaBriefcase, FaRegHandshake, FaUserCheck, FaPercentage, FaUserTimes,FaRegChartBar, FaCoins} from 'react-icons/fa'
 import {RiArrowDownSLine, RiTeamFill, RiExchangeDollarFill} from 'react-icons/ri'
 import {IoHome} from 'react-icons/io5'
 import {IoMdOptions} from 'react-icons/io'
-import {GrMoney} from  'react-icons/gr'
+
+import {TiRadarOutline} from 'react-icons/ti'
 import {GiReceiveMoney} from 'react-icons/gi'
-import {HiUsers} from 'react-icons/hi'
+
+import {HiClipboardList, HiOutlineLogout, HiUsers} from 'react-icons/hi'
 import {MdSavings, MdManageAccounts} from 'react-icons/md'
 import { IconContext } from 'react-icons';
 const SideBar = () =>{ 
@@ -66,7 +68,7 @@ const SideBar = () =>{
                         <MdSavings /> Savings Products 
                     </Link>
                     <Link to='/' className="aside-links"> 
-                        <GrMoney /> Fees and Charges 
+                        <FaCoins /> Fees and Charges 
                     </Link>
                     <Link to='/' className="aside-links"> 
                         <RiExchangeDollarFill /> Transactions 
@@ -89,17 +91,17 @@ const SideBar = () =>{
                     <Link to='/' className="aside-links no-padding"> 
                     < IoMdOptions/>Preferences </Link> 
                     <Link to='/' className="aside-links"> 
-                    < IoMdOptions/>Fees and Pricing </Link> 
+                    < FaPercentage />Fees and Pricing </Link> 
                     <Link to='/' className="aside-links"> 
-                    < IoMdOptions/>Audit Logs </Link> 
+                    < HiClipboardList/>Audit Logs </Link> 
                     <Link to='/' className="aside-links"> 
-                    < IoMdOptions/>Systems Messages</Link> 
+                    < TiRadarOutline />Systems Messages</Link> 
 
                 </div> 
-                <hr className="bar"></hr>
+                <hr className="divide-bar"></hr>
                 <div className="aside--logout__version">
                     <Link to ='/' className="no-padding aside-links"> 
-                    < IoMdOptions/>Logout</Link>
+                    < HiOutlineLogout/>Logout</Link>
                     <small className="aside--logout__version--number"> 
                     v1.2.0</small> 
                 </div> 

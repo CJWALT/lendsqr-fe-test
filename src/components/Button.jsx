@@ -3,7 +3,7 @@ import React from 'react'
 
     
     const STYLES = ['btn--primary', 'btn--outline']
-    const COLORS = ['primary', 'red', 'green'] 
+    const COLORS = ['primary', 'red'] 
     const SIZES = ['big--size', 'mobile-size', 'small-btn-search', 'small-btn']
 
 
